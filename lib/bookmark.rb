@@ -13,8 +13,8 @@ class Bookmark
 
 
   private
-  @@bookmarks = [Bookmark.new("Makers Academy", "https://makers.tech")]
+  @@bookmarks = [["Makers Academy", "https://makers.tech"], ["Twitter", "https://twitter.com"], ["Facebook", "https://www.facebook.com"]]
 
-  
+
 
 end
