@@ -4,14 +4,14 @@ class Bookmark
 
   attr_reader :title, :url
 
-  def self.all
-    self.urls_from_db
+  def self.all(database = 'bookmark_manager')
+    self.urls_from_db(database)
   end
 
-  def self.urls_from_db
+  def self.urls_from_db(database)
     out_arr = []
     begin
-      connection = PG.connect dbname: 'bookmark_manager', user: ENV["USER"]
+      connection = PG.connect dbname: database, user: ENV["USER"]
       results = connection.exec "Select * from bookmarks"
       results.each { |row| out_arr << row['url'] }
 
