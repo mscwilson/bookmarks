@@ -5,7 +5,7 @@ describe Bookmark do
   subject(:bookmark) { Bookmark.new("Makers Academy", "https://makers.tech") }
 
   it "returns all of its instances" do
-    expect(Bookmark.all[0].class).to eq Bookmark
+    expect(Bookmark.all[0].class).to eq Array
   end
 
   it "has a name" do
@@ -15,5 +15,5 @@ describe Bookmark do
   it "has a URL" do
     expect(bookmark.url).to eq "https://makers.tech"
   end
-  
+
 end

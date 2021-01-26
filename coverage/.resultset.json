@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mirandawilson/week_4/bookmarks/spec/bookmark_spec.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Afternoon_challenges/bookmarks/spec/bookmark_spec.rb": {
         "lines": [
           1,
           null,
@@ -24,31 +24,7 @@
           null
         ]
       },
-      "/Users/mirandawilson/week_4/bookmarks/lib/bookmark.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
-          2,
-          null,
-          null,
-          1,
-          3,
-          3,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/mirandawilson/week_4/bookmarks/spec/feature/bookmarks_page_spec.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Afternoon_challenges/bookmarks/spec/feature/bookmarks_page_spec.rb": {
         "lines": [
           1,
           1,
@@ -59,7 +35,7 @@
           null
         ]
       },
-      "/Users/mirandawilson/week_4/bookmarks/spec/feature/simple_index_spec.rb": {
+      "/Users/glykeriastravodimou/MakersAcademy/Afternoon_challenges/bookmarks/spec/feature/simple_index_spec.rb": {
         "lines": [
           1,
           1,
@@ -70,6 +46,6 @@
         ]
       }
     },
-    "timestamp": 1611591196
+    "timestamp": 1611592145
   }
 }
