@@ -7,18 +7,20 @@ So I can remember what sites I like to visit
 I want to see a list of bookmarks
 ```
 Classes:
-Bookmark, BookmarkManager (has list of Bookmarks).
+Bookmark,  
+BookmarkManager (has list of Bookmarks).  
 show list -> method of the BookmarkManager
 
-![user story 1](/user_story_1.png)
+![user story 1](user_story_1.png)
 
 ### To set up the database
 
-Make sure that PostgreSQL is installed. Connect to `psql` and create a `bookmark_manager` database:
+Make sure that PostgreSQL is installed. Connect to `psql` and create `bookmark_manager` and `bookmark_manager_test` databases:
 ```
 CREATE DATABASE bookmark_manager
+CREATE DATABASE bookmark_manager_test
 ```
-Connect to the database and run the SQL scripts in `db/migrations` folder in the given order, to create the right tables.
+Connect to each database and run the SQL scripts in `db/migrations` folder in the given order, to create the right tables.
 
 ### To run the app
 Run `bundle` to install the required gems. Then run it with:
