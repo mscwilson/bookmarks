@@ -1,20 +1,31 @@
+require 'pg'
+
 class Bookmark
 
   attr_reader :title, :url
 
   def self.all
-    @@bookmarks
+    self.urls_from_db
   end
 
-  def initialize(title, url)
-    @title = title
-    @url = url
+  def self.urls_from_db
+    out_arr = []
+    begin
+      connection = PG.connect dbname: 'bookmark-manager', user: ENV["USER"]
+      results = connection.exec "Select * from bookmarks"
+      results.each { |row| out_arr << row['url'] }
+
+    rescue PG::Error => e
+      puts e.message
+
+    ensure
+      results.clear if results
+      connection.close if connection
+    end
+    out_arr
   end
 
-
-  private
-  @@bookmarks = [["Makers Academy", "https://makers.tech"], ["Twitter", "https://twitter.com"], ["Facebook", "https://www.facebook.com"]]
-
+  private_class_method :urls_from_db
 
 
 end

@@ -2,18 +2,22 @@ require "bookmark"
 
 describe Bookmark do
 
-  subject(:bookmark) { Bookmark.new("Makers Academy", "https://makers.tech") }
-
-  it "returns all of its instances" do
-    expect(Bookmark.all[0].class).to eq Array
+  it "returns URLs" do
+    expect(Bookmark.all).to include "http://www.makersacademy.com"
   end
 
-  it "has a name" do
-    expect(bookmark.title).to eq "Makers Academy"
-  end
+  # describe '::urls_from_db' do
+  #   it 'returns urls' do
+  #     expect(Bookmark.urls_from_db).to include "http://www.makersacademy.com"
+  #   end
+  # end
 
-  it "has a URL" do
-    expect(bookmark.url).to eq "https://makers.tech"
-  end
+  # it "has a name" do
+  #   expect(bookmark.title).to eq "Makers Academy"
+  # end
+
+  # it "has a URL" do
+  #   expect(bookmark.url).to eq "https://makers.tech"
+  # end
 
 end
