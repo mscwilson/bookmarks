@@ -12,5 +12,9 @@ class BookmarkManager < Sinatra::Base
     erb :bookmarks
   end
 
+  post "/add_bookmark" do
+    "<strong>http://www.facebook.com</strong>"
+  end
+
   run! if app_file == $0
 end

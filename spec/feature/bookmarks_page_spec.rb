@@ -13,4 +13,11 @@ feature "bookmarks page" do
     expect(page).to have_content "http://www.google.com"
   end
 
+  scenario "adding a bookmark" do
+    visit "/bookmarks"
+    fill_in "url", with: "http://www.facebook.com"
+    click_button "Add bookmark"
+    expect(page).to have_content "http://www.facebook.com"
+  end
+
 end
