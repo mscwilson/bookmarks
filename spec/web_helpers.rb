@@ -1,36 +1,36 @@
-require 'pg'
+# require 'pg'
 
-def truncate_test_table
-  begin
+# def truncate_test_table
+#   begin
 
-    connection = PG.connect dbname: 'bookmark_manager_test', user: ENV["USER"]
+#     connection = PG.connect dbname: 'bookmark_manager_test', user: ENV["USER"]
 
-    connection.exec 'truncate bookmarks'
+#     connection.exec 'truncate bookmarks'
 
-    rescue PG::Error => e
-      puts e.message
+#     rescue PG::Error => e
+#       puts e.message
 
-    ensure
-      connection.close if connection
+#     ensure
+#       connection.close if connection
 
-  end
+#   end
 
-end
+# end
 
-def add_test_url
+# def add_test_url
 
-  begin
+#   begin
 
-    connection = PG.connect dbname: 'bookmark_manager_test', user: ENV["USER"]
+#     connection = PG.connect dbname: 'bookmark_manager_test', user: ENV["USER"]
 
-    connection.exec "insert into bookmarks (url) values ('http://www.makersacademy.com')"
+#     connection.exec "insert into bookmarks (url) values ('http://www.makersacademy.com')"
 
-    rescue PG::Error => e
-      puts e.message
+#     rescue PG::Error => e
+#       puts e.message
 
-    ensure
-      connection.close if connection
+#     ensure
+#       connection.close if connection
 
-  end
+#   end
 
-end
+# end

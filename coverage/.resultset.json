@@ -1,13 +1,45 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mirandawilson/week_4/bookmarks/spec/bookmark_spec.rb": {
+      "/Users/salar/Desktop/MidweekChallenges/bookmarks/spec/bookmark_spec.rb": {
         "lines": [
           1,
           null,
           1,
           null,
           1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/salar/Desktop/MidweekChallenges/bookmarks/spec/feature/bookmarks_page_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
           1,
           1,
           1,
@@ -16,20 +48,7 @@
           null
         ]
       },
-      "/Users/mirandawilson/week_4/bookmarks/spec/feature/bookmarks_page_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/mirandawilson/week_4/bookmarks/spec/feature/simple_index_spec.rb": {
+      "/Users/salar/Desktop/MidweekChallenges/bookmarks/spec/feature/simple_index_spec.rb": {
         "lines": [
           1,
           1,
@@ -40,6 +59,6 @@
         ]
       }
     },
-    "timestamp": 1611759237
+    "timestamp": 1611761421
   }
 }
