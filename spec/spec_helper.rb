@@ -14,8 +14,8 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
  ])
  SimpleCov.start
 
-
-ENV['RACK ENV'] = 'test'
+ENV['ENVIRONMENT'] = "test"
+# ENV['RACK ENV'] = 'test'
 Capybara.app = BookmarkManager
 
 

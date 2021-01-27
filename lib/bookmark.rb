@@ -4,28 +4,17 @@ class Bookmark
 
   attr_reader :title, :url
 
-  def self.all(database = 'bookmark_manager')
-    self.urls_from_db(database)
-  end
-
-  def self.urls_from_db(database)
+  def self.all
     out_arr = []
-    begin
-      connection = PG.connect dbname: database, user: ENV["USER"]
-      results = connection.exec "Select * from bookmarks"
-      results.each { |row| out_arr << row['url'] }
-
-    rescue PG::Error => e
-      puts e.message
-
-    ensure
-      results.clear if results
-      connection.close if connection
+    if ENV["ENVIRONMENT"] == "test"
+      connection = PG.connect dbname: "bookmark_manager_test", user: ENV["USER"]
+    else
+      connection = PG.connect dbname: "bookmark_manager", user: ENV["USER"]
     end
+
+    results = connection.exec "Select * from bookmarks"
+    results.each { |row| out_arr << row['url'] }
     out_arr
   end
-
-  private_class_method :urls_from_db
-
 
 end
