@@ -13,8 +13,10 @@ class Bookmark
     end
 
     results = connection.exec "Select * from bookmarks"
-    # results.each { |row| out_arr << row['url'] }
-    results.each { |row| out_arr << row['title'] }
+    results.each do |row|
+      out_arr << [row['url']]
+      out_arr[-1] << row["title"]
+    end
     out_arr
   end
 
