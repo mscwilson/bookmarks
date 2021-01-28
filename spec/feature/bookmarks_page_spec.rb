@@ -16,6 +16,15 @@ feature "bookmarks page" do
     expect(page).to have_content "Twitter"
   end
 
+  scenario "showing Title link" do
+    visit "/bookmarks"
+    fill_in "url", with: "http://www.twitter.com"
+    fill_in "title", with: "Twitter"
+    click_button "Add bookmark"
+    expect(page).to have_link("Twitter", :href => "http://www.twitter.com")
+  end
+  
+
 
 
 end

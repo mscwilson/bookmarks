@@ -4,6 +4,12 @@ class Bookmark
 
   attr_reader :title, :url
 
+  def initialize(id, title, url)
+    @id = id
+    @title = title
+    @url = url 
+  end
+
   def self.all
     out_arr = []
     if ENV["ENVIRONMENT"] == "test"
