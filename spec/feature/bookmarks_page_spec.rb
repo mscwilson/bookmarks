@@ -3,16 +3,19 @@ feature "bookmarks page" do
     insert_three_bookmarks
     visit "/bookmarks"
 
-    expect(page).to have_content "http://www.makersacademy.com"
-    expect(page).to have_content "http://www.destroyallsoftware.com"
-    expect(page).to have_content "http://www.google.com"
+    expect(page).to have_content "Makers Academy"
+    expect(page).to have_content "Destroy All Software"
+    expect(page).to have_content "Google"
   end
 
   scenario "adding a bookmark" do
     visit "/bookmarks"
     fill_in "url", with: "http://www.twitter.com"
+    fill_in "title", with: "Twitter"
     click_button "Add bookmark"
-    expect(page).to have_content "http://www.twitter.com"
+    expect(page).to have_content "Twitter"
   end
+
+
 
 end

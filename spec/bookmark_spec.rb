@@ -10,9 +10,12 @@ describe Bookmark do
   end
 
   it "adds a bookmark to database" do
-    Bookmark.create("http://www.facebook.com")
+    Bookmark.create("http://www.facebook.com", "Facebook")
     expect(Bookmark.all).to include "http://www.facebook.com"
+    expect(Bookmark.all).to include "Facebook"
   end
+
+
 end
 
 
