@@ -13,7 +13,8 @@ class BookmarkManager < Sinatra::Base
   end
 
   post "/add_bookmark" do
-    "<strong>http://www.facebook.com</strong>"
+    Bookmark.create(params["url"])
+    redirect "/bookmarks"
   end
 
   run! if app_file == $0

@@ -1,11 +1,6 @@
 feature "bookmarks page" do
   scenario "shows some bookmarks" do
-    connection = PG.connect(dbname: 'bookmark_manager_test')
-
-    connection.exec("INSERT INTO bookmarks VALUES(1, 'http://www.makersacademy.com');")
-    connection.exec("INSERT INTO bookmarks VALUES(2, 'http://www.destroyallsoftware.com');")
-    connection.exec("INSERT INTO bookmarks VALUES(3, 'http://www.google.com');")
-
+    insert_three_bookmarks
     visit "/bookmarks"
 
     expect(page).to have_content "http://www.makersacademy.com"
@@ -15,9 +10,9 @@ feature "bookmarks page" do
 
   scenario "adding a bookmark" do
     visit "/bookmarks"
-    fill_in "url", with: "http://www.facebook.com"
+    fill_in "url", with: "http://www.twitter.com"
     click_button "Add bookmark"
-    expect(page).to have_content "http://www.facebook.com"
+    expect(page).to have_content "http://www.twitter.com"
   end
 
 end
