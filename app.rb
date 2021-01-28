@@ -9,6 +9,11 @@ class BookmarkManager < Sinatra::Base
 
   get "/bookmarks" do
     @bookmarks = Bookmark.all
+    @just_the_titles = []
+    @bookmarks.each do |bookmark|
+      @just_the_titles << bookmark[1]
+
+    end
     erb :bookmarks
   end
 
