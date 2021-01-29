@@ -2,7 +2,7 @@ require 'pg'
 
 class Bookmark
 
-  attr_reader :title, :url
+  attr_reader :title, :url, :id
 
   def initialize(id, title, url)
     @id = id
@@ -30,6 +30,15 @@ class Bookmark
       connection = PG.connect(dbname: 'bookmark_manager')
     end
     connection.exec("INSERT INTO bookmarks (url, title) VALUES ('#{website}', '#{title}');")
+  end
+
+  def self.delete(id)
+    if ENV["ENVIRONMENT"] == "test"
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+    else
+      connection = PG.connect(dbname: 'bookmark_manager')
+    end
+    connection.exec("DELETE FROM bookmarks WHERE id='#{id}';")
   end
 
 end

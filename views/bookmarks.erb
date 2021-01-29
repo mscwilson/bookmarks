@@ -7,11 +7,13 @@
 </form>
 
 
-<% @bookmarks.each do |bookmark| %>
-<a href="<%= bookmark.url %>">
-  <br>
-  <%= bookmark.title %>
-  </a>
-
-<% end %>
+<form method="post" action="/delete_bookmarks">
+  <% @bookmarks.each_with_index do |bookmark, idx| %>
+  <a href="<%= bookmark.url %>">
+    <br>
+      <%= bookmark.title %>
+    </a>
+    <input type="submit" value="Delete" name="<%= bookmark.id %>">
+  <% end %>
+</form>
 
