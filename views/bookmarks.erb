@@ -6,8 +6,12 @@
   <input type="submit" value="Add bookmark">
 </form>
 
-# <% @bookmarks.each do |bookmark| %>
-# <a href="<%= bookmark.url %>"<%= bookmark.title %> </a>
 
-# <% end %>
+<% @bookmarks.each do |bookmark| %>
+<a href="<%= bookmark.url %>">
+  <br>
+  <%= bookmark.title %>
+  </a>
+
+<% end %>
 
