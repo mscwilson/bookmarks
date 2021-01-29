@@ -6,6 +6,8 @@
   <input type="submit" value="Add bookmark">
 </form>
 
-<%= @just_the_titles.join('<br>') %>
+# <% @bookmarks.each do |bookmark| %>
+# <a href="<%= bookmark.url %>"<%= bookmark.title %> </a>
 
-<a href="http://www.twitter.com"> Twitter </a>
+# <% end %>
+

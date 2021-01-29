@@ -19,10 +19,7 @@ class Bookmark
     end
 
     results = connection.exec "Select * from bookmarks"
-    results.each do |row|
-      out_arr << [row['url']]
-      out_arr[-1] << row["title"]
-    end
+    results.each { |row| out_arr << Bookmark.new(row["id"], row["title"], row['url']) }
     out_arr
   end
 
