@@ -42,5 +42,11 @@ describe Bookmark do
   end
 
 
+  it 'does not create a new bookmark if the URL is not valid' do
+    Bookmark.create('not a real bookmark', 'not a real bookmark')
+    expect(Bookmark.all).to be_empty
+  end
+
+
 end
 

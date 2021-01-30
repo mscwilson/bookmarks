@@ -1,11 +1,7 @@
-<form action="/add_bookmark" method="post">
-  URL:
-  <input type="text" name="url">
-  Title:
-  <input type="text" name="title">
-  <input type="submit" value="Add bookmark">
-</form>
+<a href="/bookmarks/new">Click here to add a new bookmark</a>
+<br/>
 
+<%= flash[:notice] %>
 
 
 <ul>

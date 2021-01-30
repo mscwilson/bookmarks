@@ -10,7 +10,7 @@ feature "bookmarks page" do
   end
 
   scenario "adding a bookmark" do
-    visit "/bookmarks"
+    visit "/bookmarks/new"
     fill_in "url", with: "http://www.twitter.com"
     fill_in "title", with: "Twitter"
     click_button "Add bookmark"
@@ -18,13 +18,21 @@ feature "bookmarks page" do
   end
 
   scenario "showing Title link" do
-    visit "/bookmarks"
+    visit "/bookmarks/new"
     fill_in "url", with: "http://www.twitter.com"
     fill_in "title", with: "Twitter"
     click_button "Add bookmark"
     expect(page).to have_link("Twitter", :href => "http://www.twitter.com")
   end
-  
+
+  scenario "deleting bookmarks" do
+    visit "/bookmarks/new"
+    fill_in "url", with: "http://www.twitter.com"
+    fill_in "title", with: "Twitter"
+    click_button "Add bookmark"
+    click_button "Delete"
+    expect(page).not_to have_content("Twitter")
+  end  
 
   scenario "updating a bookmark" do
     Bookmark.create("http://www.makersacademy.com", "Makers Academy")
@@ -38,8 +46,14 @@ feature "bookmarks page" do
     expect(current_path).to eq "/bookmarks"
     expect(page).not_to have_link("Makers Academy", href: "http://www.makersacademy.com")
     expect(page).to have_link("Makers", href: "http://www.makers.tech")
-
   end
 
+  scenario "bookmark URL must be valid" do
+    visit "/bookmarks/new"
+    fill_in "url", with: "hello there"
+    click_button "Add bookmark"
+    expect(page).not_to have_content "hello there"
+    expect(page).to have_content "Not a valid URL"
+  end
 
 end

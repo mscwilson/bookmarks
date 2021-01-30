@@ -1,10 +1,12 @@
-require 'sinatra'
+require 'sinatra/base'
+require "sinatra/flash"
 require_relative "lib/bookmark"
 require_relative "database_connection_setup"
 
 class BookmarkManager < Sinatra::Base
 
   enable :sessions, :method_override
+  register Sinatra::Flash
 
   get '/' do
     erb :index
@@ -15,10 +17,15 @@ class BookmarkManager < Sinatra::Base
     erb :bookmarks
   end
 
-  post "/add_bookmark" do
-    Bookmark.create(params["url"], params["title"])
+  get "/bookmarks/new" do
+    erb :"bookmarks/new"
+  end
+
+  post "/bookmarks" do
+    flash[:notice] = "Not a valid URL" unless Bookmark.create(params["url"], params["title"])
     redirect "/bookmarks"
   end
+
 
   post '/delete_bookmarks' do
     Bookmark.delete(params.key("Delete"))
