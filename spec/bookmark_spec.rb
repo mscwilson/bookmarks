@@ -29,7 +29,16 @@ describe Bookmark do
     expect(updated_bookmark.id).to eq bookmark.id
     expect(updated_bookmark.title).to eq 'Snakers Academy'
     expect(updated_bookmark.url).to eq 'http://www.snakersacademy.com'
+  end
 
+  it "finds bookmark by ID" do
+    bookmark = Bookmark.create('http://www.makersacademy.com', "Makers Academy")
+    result = Bookmark.find(bookmark.id)
+
+    expect(result).to be_a Bookmark
+    expect(result.id).to eq bookmark.id
+    expect(result.title).to eq 'Makers Academy'
+    expect(result.url).to eq 'http://www.makersacademy.com'
   end
 
 
