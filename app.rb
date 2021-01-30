@@ -9,12 +9,12 @@ class BookmarkManager < Sinatra::Base
   register Sinatra::Flash
 
   get '/' do
-    erb :index
+    "Bookmark Manager"
   end
 
   get "/bookmarks" do
     @bookmarks = Bookmark.all
-    erb :bookmarks
+    erb :"bookmarks/index"
   end
 
   get "/bookmarks/new" do
@@ -23,12 +23,6 @@ class BookmarkManager < Sinatra::Base
 
   post "/bookmarks" do
     flash[:notice] = "Not a valid URL" unless Bookmark.create(params["url"], params["title"])
-    redirect "/bookmarks"
-  end
-
-
-  post '/delete_bookmarks' do
-    Bookmark.delete(params.key("Delete"))
     redirect "/bookmarks"
   end
 
@@ -47,6 +41,17 @@ class BookmarkManager < Sinatra::Base
     redirect "/bookmarks"
   end
 
+
+
+  get "/bookmarks/:id/comments/new" do
+    @bm_id = params[:id]
+    erb :"bookmarks/comments/new"
+  end
+
+  post "/bookmarks/:id/comments" do
+    Comment.create(text: params[:comment], bookmark_id: params[:id])
+    redirect "/bookmarks"
+  end
 
   run! if app_file == $0
 end

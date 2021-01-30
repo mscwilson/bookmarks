@@ -1,5 +1,6 @@
 require 'pg'
 require_relative "database_connection"
+require_relative "comment"
 
 class Bookmark
 
@@ -37,6 +38,10 @@ class Bookmark
   def self.find(id)
     result = DatabaseConnection.query("SELECT * FROM bookmarks WHERE id = #{id}")
     Bookmark.new(result[0]["id"], result[0]["title"], result[0]["url"])
+  end
+
+  def comments(comment_class = Comment)
+    comment_class.where(bookmark_id: id)
   end
 
 

@@ -1,0 +1,1 @@
+CREATE TABLE comments(id Serial primary key, text VARCHAR(240), bookmark_id Integer references bookmarks (id));

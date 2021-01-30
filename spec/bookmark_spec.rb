@@ -47,6 +47,14 @@ describe Bookmark do
     expect(Bookmark.all).to be_empty
   end
 
+  let(:comment_class) { double(:comment_class) }
+  it "returns a list of comments" do
+    bookmark = Bookmark.create('http://www.makersacademy.com', "Makers Academy")
+    expect(comment_class).to receive(:where).with(bookmark_id: bookmark.id)
+
+    bookmark.comments(comment_class)
+  end  
+
 
 end
 
