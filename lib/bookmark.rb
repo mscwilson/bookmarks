@@ -29,7 +29,8 @@ class Bookmark
     else
       connection = PG.connect(dbname: 'bookmark_manager')
     end
-    connection.exec("INSERT INTO bookmarks (url, title) VALUES ('#{website}', '#{title}');")
+    result = connection.exec("INSERT INTO bookmarks (url, title) VALUES ('#{website}', '#{title}') RETURNING id, title, url;")
+    Bookmark.new(result[0]["id"], result[0]["title"], result[0]["url"])
   end
 
   def self.delete(id)
@@ -40,5 +41,18 @@ class Bookmark
     end
     connection.exec("DELETE FROM bookmarks WHERE id=#{id};")
   end
+
+  def self.update(id:, url:, title:)
+    if ENV["ENVIRONMENT"] == "test"
+      connection = PG.connect(dbname: 'bookmark_manager_test')
+    else
+      connection = PG.connect(dbname: 'bookmark_manager')
+    end
+    result = connection.exec("UPDATE bookmarks SET url = '#{url}', title='#{title}' WHERE id= #{id} RETURNING id, title, url;")
+    Bookmark.new(result[0]["id"], result[0]["title"], result[0]["url"])
+
+
+  end
+
 
 end

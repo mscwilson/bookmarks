@@ -1,5 +1,5 @@
 feature "bookmarks page" do
-  
+
   scenario "shows some bookmarks" do
     insert_three_bookmarks
     visit "/bookmarks"
@@ -26,6 +26,20 @@ feature "bookmarks page" do
   end
   
 
+  scenario "updating a bookmark" do
+    Bookmark.create("http://www.makersacademy.com", "Makers Academy")
+    visit "/bookmarks"
+    expect(page).to have_link("Makers Academy", :href => "http://www.makersacademy.com")
+    first(".bookmark").click_button "Edit"
+    fill_in("url", with: "http://www.makers.tech")
+    fill_in("title", with: "Makers")
+    click_button "Submit"
+
+    expect(current_path).to eq "/bookmarks"
+    expect(page).not_to have_link("Makers Academy", href: "http://www.makersacademy.com")
+    expect(page).to have_link("Makers", href: "http://www.makers.tech")
+
+  end
 
 
 end

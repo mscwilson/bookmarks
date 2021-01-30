@@ -21,11 +21,17 @@ describe Bookmark do
     expect(bookmark.title).to eq "Twitter"
   end
 
+  it "edits an existing bookmark" do
+    bookmark = Bookmark.create('http://www.makersacademy.com', "Makers Academy")
+    updated_bookmark = Bookmark.update(id: bookmark.id, url: 'http://www.snakersacademy.com', title: 'Snakers Academy')
+
+    expect(updated_bookmark).to be_a Bookmark
+    expect(updated_bookmark.id).to eq bookmark.id
+    expect(updated_bookmark.title).to eq 'Snakers Academy'
+    expect(updated_bookmark.url).to eq 'http://www.snakersacademy.com'
+
+  end
+
 
 end
 
-
-
-
-  # truncate_test_table
-    # add_test_url
