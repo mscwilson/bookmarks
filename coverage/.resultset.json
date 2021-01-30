@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/carrot-2/Library/Mobile Documents/com~apple~CloudDocs/Makers/cloned-repos/bookmarks/spec/bookmark_spec.rb": {
+      "/Users/mirandawilson/Makers/week_4/bookmarks/spec/bookmark_spec.rb": {
         "lines": [
           1,
           null,
@@ -36,9 +36,10 @@
           null
         ]
       },
-      "/Users/carrot-2/Library/Mobile Documents/com~apple~CloudDocs/Makers/cloned-repos/bookmarks/spec/feature/bookmarks_page_spec.rb": {
+      "/Users/mirandawilson/Makers/week_4/bookmarks/spec/feature/bookmarks_page_spec.rb": {
         "lines": [
           1,
+          null,
           1,
           1,
           1,
@@ -70,7 +71,7 @@
           null
         ]
       },
-      "/Users/carrot-2/Library/Mobile Documents/com~apple~CloudDocs/Makers/cloned-repos/bookmarks/spec/feature/deleting_bookmarks_spec.rb": {
+      "/Users/mirandawilson/Makers/week_4/bookmarks/spec/feature/deleting_bookmarks_spec.rb": {
         "lines": [
           1,
           1,
@@ -78,12 +79,13 @@
           1,
           1,
           1,
-          0,
+          1,
+          1,
           null,
           null
         ]
       },
-      "/Users/carrot-2/Library/Mobile Documents/com~apple~CloudDocs/Makers/cloned-repos/bookmarks/spec/feature/simple_index_spec.rb": {
+      "/Users/mirandawilson/Makers/week_4/bookmarks/spec/feature/simple_index_spec.rb": {
         "lines": [
           1,
           1,
@@ -94,6 +96,6 @@
         ]
       }
     },
-    "timestamp": 1611940008
+    "timestamp": 1612001989
   }
 }

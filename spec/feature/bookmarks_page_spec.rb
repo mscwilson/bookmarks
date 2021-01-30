@@ -1,4 +1,5 @@
 feature "bookmarks page" do
+  
   scenario "shows some bookmarks" do
     insert_three_bookmarks
     visit "/bookmarks"
