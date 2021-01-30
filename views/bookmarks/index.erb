@@ -2,6 +2,10 @@
   <h2>Welcome, <%= @user.email %></h2>
 <% end %>
 
+<form action="/sessions/destroy" method="post">
+  <input type="submit" value="Sign out" />
+</form>
+
 <a href="/bookmarks/new">Click here to add a new bookmark</a>
 <br/>
 
