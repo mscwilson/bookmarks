@@ -13,3 +13,4 @@ gem 'rubocop'
 gem 'simplecov'
 gem 'simplecov-console'
 gem 'pg'
+gem "bcrypt"
