@@ -3,7 +3,7 @@
 A simple bookmarks manager, using the Ruby web framework Sinatra with a PostgreSQL database. Users can save URLs they like for future reference, and also comment on them to easily remember what they're for.
 
 ### Description
-As part of the [Makers Academy](https://makers.tech) coding bootcamp (week 4 of 12), we were challenged to create a web app to store bookmarks. The majority of this repo was written using alternating pair programming. The other contributors were RTurney and MegGosnell.  
+As part of the [Makers Academy](https://makers.tech) coding bootcamp (week 4 of 12), we were challenged to create a web app to store bookmarks. The majority of this repo was written using alternating pair programming. The other contributors were [Reeshul](https://github.com/Reeshul), [LouisWicks](https://github.com/louiswicks), [SalarGhotaslo](https://github.com/SalarGhotaslo), [HughCavanagh](https://github.com/hacaravan), and [Glykeria](https://github.com/GlykeriaStr).  
 
 The goal was to learn about databases, SQL, and understand how they fit into the Model-View-Controller pattern.  
 
