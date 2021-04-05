@@ -10,7 +10,7 @@ class BookmarkManager < Sinatra::Base
   register Sinatra::Flash
 
   get '/' do
-    "Bookmark Manager"
+    redirect "/bookmarks"
   end
 
   get "/bookmarks" do
