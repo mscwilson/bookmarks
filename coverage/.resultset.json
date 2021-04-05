@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mirandawilson/Makers/week_4/bookmarks/spec/bookmark_spec.rb": {
+      "/Users/mirandawilson/Makers/week4/bookmarks/spec/bookmark_spec.rb": {
         "lines": [
           1,
           null,
@@ -65,7 +65,7 @@
           null
         ]
       },
-      "/Users/mirandawilson/Makers/week_4/bookmarks/spec/comment_spec.rb": {
+      "/Users/mirandawilson/Makers/week4/bookmarks/spec/comment_spec.rb": {
         "lines": [
           1,
           1,
@@ -97,7 +97,7 @@
           null
         ]
       },
-      "/Users/mirandawilson/Makers/week_4/bookmarks/spec/database_connection_spec.rb": {
+      "/Users/mirandawilson/Makers/week4/bookmarks/spec/database_connection_spec.rb": {
         "lines": [
           1,
           null,
@@ -123,7 +123,7 @@
           null
         ]
       },
-      "/Users/mirandawilson/Makers/week_4/bookmarks/spec/feature/adding_and_viewing_comments_spec.rb": {
+      "/Users/mirandawilson/Makers/week4/bookmarks/spec/feature/adding_and_viewing_comments_spec.rb": {
         "lines": [
           1,
           null,
@@ -145,7 +145,7 @@
           null
         ]
       },
-      "/Users/mirandawilson/Makers/week_4/bookmarks/spec/feature/authentication_spec.rb": {
+      "/Users/mirandawilson/Makers/week4/bookmarks/spec/feature/authentication_spec.rb": {
         "lines": [
           1,
           1,
@@ -206,7 +206,7 @@
           null
         ]
       },
-      "/Users/mirandawilson/Makers/week_4/bookmarks/spec/feature/bookmarks_page_spec.rb": {
+      "/Users/mirandawilson/Makers/week4/bookmarks/spec/feature/bookmarks_page_spec.rb": {
         "lines": [
           1,
           null,
@@ -269,7 +269,7 @@
           null
         ]
       },
-      "/Users/mirandawilson/Makers/week_4/bookmarks/spec/feature/registration_spec.rb": {
+      "/Users/mirandawilson/Makers/week4/bookmarks/spec/feature/registration_spec.rb": {
         "lines": [
           1,
           1,
@@ -283,7 +283,7 @@
           null
         ]
       },
-      "/Users/mirandawilson/Makers/week_4/bookmarks/spec/user_spec.rb": {
+      "/Users/mirandawilson/Makers/week4/bookmarks/spec/user_spec.rb": {
         "lines": [
           1,
           null,
@@ -316,6 +316,6 @@
         ]
       }
     },
-    "timestamp": 1612031510
+    "timestamp": 1617624611
   }
 }
